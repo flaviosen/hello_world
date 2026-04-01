@@ -13,16 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text("imagem SENAI"),),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("Bem-vindo", style: TextStyle(fontSize: 24)),
-              const SizedBox(height: 20),
-              Image.asset("assets/images/imagem de fundo.jpg"),
-            ],
-          )
-          )
+        body: Center(child: Image.asset("assets/images/imagem de fundo.jpg"),)
       ),
     );
   }
