@@ -31,10 +31,10 @@ class CarteiraDigital extends StatelessWidget {
         children: [
           CartaoBanco(
             corCartao: Colors.blue,
-            banco: "Banco SESI",
-            numero: "1234 5678 9012 3456",
+            banco: "Banco do Brasil",
+            numero: "4578 9213 6542 1189",
             nome: "Flavio Henrique Bueno Izidoro",
-            validade: "12/30",
+            validade: "09/29",
             bandeira: "assets/images/mastercard.png",
           ),
 
@@ -42,10 +42,10 @@ class CarteiraDigital extends StatelessWidget {
 
           CartaoBanco(
             corCartao: Colors.orange,
-            banco: "Inter",
-            numero: "1234 5678 9012 3456",
+            banco: "Itaú",
+            numero: "5312 7789 4421 0098",
             nome: "Flavio Henrique Bueno Izidoro",
-            validade: "03/32",
+            validade: "05/31",
             bandeira: "assets/images/mastercard.png",
           ),
 
@@ -53,10 +53,10 @@ class CarteiraDigital extends StatelessWidget {
 
           CartaoBanco(
             corCartao: Colors.deepPurple,
-            banco: "Nubank",
-            numero: "1234 5678 9012 3456",
+            banco: "Bradesco",
+            numero: "4023 6677 8899 1234",
             nome: "Flavio Henrique Bueno Izidoro",
-            validade: "07/31",
+            validade: "11/30",
             bandeira: "assets/images/mastercard.png",
           ),
         ],
@@ -117,13 +117,7 @@ class CartaoBanco extends StatelessWidget {
 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Image.asset(
-                    bandeira,
-                    width: 40,
-                    height: 40,
-                  )
-                ],
+                children: [Image.asset(bandeira, width: 40, height: 40)],
               ),
             ],
           ),
