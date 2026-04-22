@@ -7,72 +7,131 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  Widget cartao(String nome, String conta, String validade, List<Color> cores) {
-    return Container(
-      width: 330,
-      height: 200,
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: cores,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Text("BANCO SESI/SENAI",
-              style: TextStyle(color: Colors.white, fontSize: 16)),
-
-          const Spacer(),
-
-          Text("Validade: $validade",
-              style: TextStyle(color: Colors.white70)),
-
-          Text(nome, style: TextStyle(color: Colors.white)),
-
-          Text("Conta: $conta",
-              style: TextStyle(color: Colors.white)),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: const Text("Meu Perfil"),
+          backgroundColor: Colors.red[900],
+          foregroundColor: Colors.white,
+        ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              cartao(
-                "FLAVIO BUENO",
-                "12345678-9",
-                "12/28",
-                [Colors.purple, Colors.deepPurple],
+          child: SingleChildScrollView(
+            child: Container(
+              width: 350,
+              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 10,
+                    offset: Offset(0, 5),
+                  )
+                ],
               ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const CircleAvatar(
+                    radius: 55,
+                    backgroundImage:
+                        AssetImage('../assets/image/perfil.jpg'),
+                  ),
 
-              cartao(
-                "MARIA SILVA",
-                "98765432-1",
-                "08/27",
-                [Colors.blue, Colors.lightBlue],
-              ),
+                  const SizedBox(height: 15),
 
-              cartao(
-                "JOÃO SOUZA",
-                "45678912-3",
-                "05/29",
-                [Colors.green, Colors.lightGreen],
+                  const Text(
+                    "FLAVIO HENRIQUE",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const SizedBox(height: 5),
+
+                  Text(
+                    "Desenvolvedor Mobile",
+                    style: TextStyle(
+                      color: Colors.red[100],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+
+                  const SizedBox(height: 40),
+
+                  const Text(
+                    "flavio@gmail.com",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  const Text(
+                    "11 99999-9999",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  const Text(
+                    "Mococa - SP",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+
+                  const SizedBox(height: 40),
+
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.star, color: Colors.amber, size: 30),
+                      Icon(Icons.star, color: Colors.amber, size: 30),
+                      Icon(Icons.star, color: Colors.amber, size: 30),
+                      Icon(Icons.star, color: Colors.amber, size: 30),
+                      Icon(Icons.star_half, color: Colors.amber, size: 30),
+                      Text(
+                        " 4.5",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  ),
+
+                  const SizedBox(height: 30),
+
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.red,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    child: const Text(
+                      "Editar Perfil",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
