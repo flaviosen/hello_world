@@ -120,8 +120,8 @@ class CartaoBanco extends StatelessWidget {
                 children: [
                   Image.asset(
                     bandeira,
-                    width: 40,
-                    height: 40,
+                    width: 30,
+                    height: 30,
                   )
                 ],
               ),
